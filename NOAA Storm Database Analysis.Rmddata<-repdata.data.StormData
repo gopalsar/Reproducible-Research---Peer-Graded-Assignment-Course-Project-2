@@ -36,4 +36,9 @@ Damage <- mutate(Damage, TotalDamage = TotalPropDamage + TotalCropDamage)
 Damage <- Damage[order(Damage$TotalDamage, decreasing = T), ]
 Top_Damage <- Damage[1:10, ]
 
+library(ggplot2)
+plot1 <- qplot(EVTYPE, TotalHarm, data = TopHarm, stat='identity',geom = "bar", fill= EVTYPE,xlab="Top 10 events",ylab="Casualties",main="Casualties due to severe weather events\nin the U.S from 1950-2011")
+plot1 + theme(axis.text.x = element_text(angle = 45))
 
+plot2 <- qplot(EVTYPE, TotalDamage, data = TopDamage, stat='identity',geom = "bar", fill= EVTYPE,xlab="Top 10 events",ylab="Economic damage",main="Economic damage due to severe weather events\nin the U.S from 1950-2011")
+plot2 + theme(axis.text.x = element_text(angle = 45))
