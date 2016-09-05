@@ -41,6 +41,6 @@ plot1 <- qplot(EVTYPE, Total_Harm, data = Top_Harm, fill= EVTYPE,xlab="Top 10 ev
 plot1 + theme(axis.text.x = element_text(angle = 45))
 print(plot1)
 
-plot2 <- qplot(EVTYPE, Total_Damage, data = Top_Damage, fill= EVTYPE,xlab="Top 10 events",ylab="Economic damage",main="Economic damage due to severe weather events\nin the U.S from 1950-2011")
+plot2 <- qplot(EVTYPE, TotalDamage, data = Top_Damage, fill= EVTYPE,xlab="Top 10 events",ylab="Economic damage",main="Economic damage due to severe weather events\nin the U.S from 1950-2011")
 plot2 + theme(axis.text.x = element_text(angle = 45))
 print(plot2)
